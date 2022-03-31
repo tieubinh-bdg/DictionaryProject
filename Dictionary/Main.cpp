@@ -1,18 +1,18 @@
 #include "Main.h"
 
 int main() {
-	Dictionary* list = new Dictionary();
-	list->Add("1", "One");
-	list->Add("3", "Three");
-	list->Add("2", "Two");
-	list->Add("2", "Four");
-	list->Display();
-	cout << "Exist Key: " << list->ContainsKey("3") << endl;
-	cout << "Exist Value: " << list->ContainsValue("3") << endl;
-	//list->Remove("2");
-	//list->Display();
-	//list->Clear();
-	//list->DisPlay();
+	Dictionary<int, string>* dic = new Dictionary<int, string>();
+	dic->Add(1, "One");
+	dic->Add(2, "Two");
+	dic->Add(3, "Three");
+	dic->Add(2, "Four");
+	dic->Display();
+	cout << "Exist Key: " << (dic->ContainsKey(3) ? "Exist" : "Not exist") << endl;
+	cout << "Exist Value: " << (dic->ContainsValue("3") ? "Exist" : "Not exist") << endl;
+	dic->Remove(1);
+	dic->Display();
+	dic->Clear();
+	dic->Display();
 
-	delete list;
+	delete dic;
 }
